@@ -24,7 +24,7 @@ fun main() {
  * @return
  */
 
-fun removeDuplicates(nums: IntArray?): Int {
+private fun removeDuplicates(nums: IntArray?): Int {
     if (nums == null || nums.isEmpty()) {
         return 0
     }
