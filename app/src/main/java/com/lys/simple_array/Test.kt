@@ -1,4 +1,4 @@
-package com.lys.doleetcode
+package com.lys.simple_array
 
 import android.R.array
 

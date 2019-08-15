@@ -1,4 +1,4 @@
-package com.lys.doleetcode
+package com.lys.simple_array
 
 /**
  * Created:2019-08-12 10: 31
@@ -26,25 +26,23 @@ fun containsDuplicate(nums: IntArray): Boolean {
 }
 
 /*
-方法二：排序 【通过】 链接：https://leetcode-cn.com/problems/two-sum/solution/cun-zai-zhong-fu-yuan-su-by-leetcode/
+ * 方法二：排序 【通过】 链接：https://leetcode-cn.com/problems/two-sum/solution/cun-zai-zhong-fu-yuan-su-by-leetcode/
 
-直觉
+ * 直觉
 
-如果存在重复元素，排序后它们应该相邻。
+ * 如果存在重复元素，排序后它们应该相邻。
 
-算法
+ * 算法
 
-本方法使用排序算法。由于比较排序算法，如堆排序，可以在最坏情况下具有 O(n \log n)O(nlogn) 的时间复杂度。因此，排序经常是很好的预处理方法。排序之后，我们可以扫描已排序的数组,以查找是否有任何连续的重复元素。
-
-
-*
-* public boolean containsDuplicate(int[] nums) {
+ * 本方法使用排序算法。由于比较排序算法，如堆排序，可以在最坏情况下具有 O(n \log n)O(nlogn) 的时间复杂度。因此，排序经常是很好的预处理方法。排序之后，我们可以扫描已排序的数组,以查找是否有任何连续的重复元素。
+ *
+ * public boolean containsDuplicate(int[] nums) {
     Arrays.sort(nums);
     for (int i = 0; i < nums.length - 1; ++i) {
         if (nums[i] == nums[i + 1]) return true;
     }
     return false;
-}
+ * }
 
 *
 * */
