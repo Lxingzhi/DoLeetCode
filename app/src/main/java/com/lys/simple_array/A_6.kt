@@ -19,9 +19,9 @@ import java.util.*
  * 如果 nums2 的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？
  */
 fun main() {
-    val nums1 = intArrayOf(1, 2, 2, 1)
-    val nums2 = intArrayOf(2, 2)
-    print(intersect(nums1, nums2).toList())
+    val nums1 = intArrayOf(0, 5, 8, 7, 2, 9, 7, 5)
+    val nums2 = intArrayOf(1, 4, 8, 9)
+    print(intersect2(nums1, nums2).toList())
 
 
 }
@@ -49,4 +49,34 @@ fun intersect(nums1: IntArray, nums2: IntArray): IntArray {
 
     return list.toIntArray()
 
+}
+
+fun intersect2(nums1: IntArray, nums2: IntArray): IntArray {
+    val intersectList = mutableListOf<Int>()
+    nums1.sort()
+    nums2.sort()
+
+    var i = 0
+    var j = 0
+
+    val size = nums1.size + nums2.size
+
+    abc@ for (k in 0..size) {
+        if (i < nums1.size && j < nums2.size) {
+            if (nums1[i] == nums2[j]) {
+                intersectList.add(nums1[i])
+                i++
+                j++
+            } else if (nums1[i] > nums2[j]) {
+                j++
+            } else if (nums1[i] < nums2[j]) {
+                i++
+            }
+
+        }
+        continue@abc
+    }
+
+
+    return intersectList.toIntArray()
 }
