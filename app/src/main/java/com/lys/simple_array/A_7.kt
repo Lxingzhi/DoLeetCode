@@ -14,7 +14,6 @@ package com.lys.simple_array
  */
 
 fun main() {
-
     val nums = intArrayOf(9)
     print(plusOne(nums).toList())
 }
